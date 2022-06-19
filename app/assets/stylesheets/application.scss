@@ -1,0 +1,37 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "custom";
+@import "bootstrap/scss/bootstrap";
+@import "login";
+
+.btn-site-light, .btn-site-light:hover {
+  color: $site-red;
+  font-weight: bold;
+  border-color: $site-red;
+  &:hover {
+    box-shadow: 0px 0px 0px 1pc $site-red;
+  }
+}
+
+h1.impact-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.bg-site-red {
+  background-color: $site-red;
+}
+.th-text.color {
+  color: #4F4F4F;
+}
+
+.page-item.active .page-link{
+  background-color: $site-red;
+  border-color: $site-red;
+}
+
+.vacancy-card, .card {
+  border-radius: 1rem;
+  .card-header:first-child {
+    border-radius: 1rem 1rem 0px 0px;
+  }
+}
