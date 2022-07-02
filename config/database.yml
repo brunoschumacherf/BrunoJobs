@@ -22,7 +22,6 @@ test:
 
 production:
   <<: *default
-  <<: *default
   host: ec2-3-223-213-207.compute-1.amazonaws.com
   database: d6pves2m249pee
   username: aerztwscuklwta
