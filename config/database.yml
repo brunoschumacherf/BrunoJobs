@@ -22,9 +22,10 @@ test:
 
 production:
   <<: *default
-  host: ec2-44-205-41-76.compute-1.amazonaws.com
-  database: d7vjvpu92su0c6
-  username: qoripjaqhcibgu
-  password: 9ab88d73614482a0eed3d14217d076f069ca8c297b210e4963d8741780315cdd
-  uri: postgres://qoripjaqhcibgu:9ab88d73614482a0eed3d14217d076f069ca8c297b210e4963d8741780315cdd@ec2-44-205-41-76.compute-1.amazonaws.com:5432/d7vjvpu92su0c6
+  <<: *default
+  host: ec2-3-223-213-207.compute-1.amazonaws.com
+  database: d6pves2m249pee
+  username: aerztwscuklwta
+  password: 784e573fc5ef4b9b90dd018684b89ecb95ae7edbcb21a684a3b7821f92e6427e
+  uri: postgres://aerztwscuklwta:784e573fc5ef4b9b90dd018684b89ecb95ae7edbcb21a684a3b7821f92e6427e@ec2-3-223-213-207.compute-1.amazonaws.com:5432/d6pves2m249pee
   port: 5432
