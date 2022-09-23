@@ -1,4 +1,12 @@
 # BrunoJobs
 
 * Projeto Fullstack
-Run npm i bootstrap
+Rodar bootstrap
+```bash
+  npm i bootstrap
+```
+
+Rodar db::migrate
+```bash
+  rake db:migrate
+```
