@@ -1,4 +1,15 @@
 pt-BR:
+  activerecord:
+    errors:
+      models:
+        company:
+          attributes:
+              password:
+                blank: "Senha é obrigatório"
+              email:
+                blank: "Email é obrigatório"
   login:
     password_incorrect: "Senha Invalida"
-    
+  input:
+    required_input: "%{param} é obrigatório."
+    required_input_lenght: "O Minimo é de 3 caracteres e maximo 1000"
