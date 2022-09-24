@@ -1,4 +1,10 @@
 pt-BR:
+  datetime:
+    distance_in_words:
+        about_x_hours: "algumas horas"
+        x_days:
+          one: "1 Dia"
+          other: "%{count} Dias"
   activerecord:
     errors:
       models:

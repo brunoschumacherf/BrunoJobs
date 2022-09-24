@@ -5,6 +5,5 @@ class Company < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :vacancies
   validates :name, presence: { message: I18n.t('input.required_input', param: 'Nome da Empresa') }
-  validates :description, length: { minimum: 3, maximum: 1000, message: I18n.t('input.required_input_lenght') },
-                                   presence: { message: I18n.t('input.required_input', param: 'Descrição') }
+  validates :description, length: { minimum: 3, maximum: 1000, message: I18n.t('input.required_input_lenght') }
 end

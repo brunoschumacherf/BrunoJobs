@@ -1,11 +1,9 @@
 <%= form_with(model: applicant, class: 'row g-3') do |form| %>
   <% if applicant.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
-
       <ul>
         <% applicant.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.message %></li>
         <% end %>
       </ul>
     </div>

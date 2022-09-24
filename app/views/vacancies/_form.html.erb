@@ -3,10 +3,9 @@
     <%= form_with(model: vacancy) do |form| %>
       <% if vacancy.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
           <ul>
             <% vacancy.errors.each do |error| %>
-              <li><%= error.full_message %></li>
+              <li><%= error.message %></li>
             <% end %>
           </ul>
         </div>
