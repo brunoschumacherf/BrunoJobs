@@ -22,9 +22,9 @@ test:
 
 production:
   <<: *default
-  host: ec2-44-205-41-76.compute-1.amazonaws.com
-  database: d7vjvpu92su0c6
-  username: qoripjaqhcibgu
-  password: 9ab88d73614482a0eed3d14217d076f069ca8c297b210e4963d8741780315cdd
-  uri: postgres://qoripjaqhcibgu:9ab88d73614482a0eed3d14217d076f069ca8c297b210e4963d8741780315cdd@ec2-44-205-41-76.compute-1.amazonaws.com:5432/d7vjvpu92su0c6
-  port: 5432
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  uri: <%= ENV['DATABASE_URL'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
