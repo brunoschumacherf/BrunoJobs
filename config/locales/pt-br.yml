@@ -5,6 +5,7 @@ pt-BR:
         x_days:
           one: "1 Dia"
           other: "%{count} Dias"
+        x_months: "%{count} Meses"
   activerecord:
     errors:
       models:
