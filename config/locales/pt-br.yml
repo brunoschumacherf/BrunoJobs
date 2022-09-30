@@ -28,6 +28,6 @@ pt-BR:
     delete:
       sucess: "%{type} deletada com sucesso"
     update:
-      "%{type} editada com sucesso"
+      sucess: "%{type} editada com sucesso"
   vacancy:
     candidate_sucess: "Você se candidatou a vaga com sucesso"
