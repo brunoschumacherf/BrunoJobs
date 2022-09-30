@@ -22,3 +22,12 @@ pt-BR:
   input:
     required_input: "%{param} é obrigatório."
     required_input_lenght: "O Minimo é de 3 caracteres e maximo 1000"
+  controller:
+    create:
+      sucess: "%{type} criada com sucesso"
+    delete:
+      sucess: "%{type} deletada com sucesso"
+    update:
+      "%{type} editada com sucesso"
+  vacancy:
+    candidate_sucess: "Você se candidatou a vaga com sucesso"

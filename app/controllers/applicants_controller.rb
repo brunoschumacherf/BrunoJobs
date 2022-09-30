@@ -30,7 +30,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to '/vacancies/all', notice: "Você se candidatou a vaga!" }
+        format.html { redirect_to '/vacancies/all', notice: I18n.t('vacancy.candidate_sucess') }
         format.json { render :show, status: :created, location: @applicant }
       else
         @vacancy = Vacancy.find(@applicant.vacancy_id)
@@ -44,7 +44,7 @@ class ApplicantsController < ApplicationController
   def update
     respond_to do |format|
       if @applicant.update(applicant_params)
-        format.html { redirect_to applicant_url(@applicant), notice: "Applicant was successfully updated." }
+        format.html { redirect_to applicant_url(@applicant), notice: I18n.t('controller.update.sucess', type: 'Aplicante') }
         format.json { render :show, status: :ok, location: @applicant }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +58,7 @@ class ApplicantsController < ApplicationController
     @applicant.destroy
 
     respond_to do |format|
-      format.html { redirect_to applicants_url, notice: "Applicant was successfully destroyed." }
+      format.html { redirect_to applicants_url, notice: I18n.t('controller.delete.sucess', type: 'Aplicante') }
       format.json { head :no_content }
     end
   end

@@ -35,14 +35,14 @@ class VacanciesController < ApplicationController
   # POST /vacancies or /vacancies.json
   def create
     @vacancy = current_company.vacancies.build(vacancy_params)
-    if !current_company.vacancies.where(vacancy_params).first.nil?
+    unless current_company.vacancies.where(vacancy_params).first.nil?
       return respond_to do |format|
         format.html { redirect_to '/', notice: "Essa vaga já existe" }
       end
     end
     respond_to do |format|
       if @vacancy.save
-        format.html { redirect_to vacancy_url(@vacancy), notice: "Vacancy was successfully created." }
+        format.html { redirect_to vacancy_url(@vacancy), notice: I18n.t('controller.create.sucess', type: 'Vaga') }
         format.json { render :show, status: :created, location: @vacancy }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class VacanciesController < ApplicationController
   def update
     respond_to do |format|
       if @vacancy.update(vacancy_params)
-        format.html { redirect_to vacancy_url(@vacancy), notice: "Vacancy was successfully updated." }
+        format.html { redirect_to vacancy_url(@vacancy), notice: I18n.t('controller.update.sucess', type: 'Vaga') }
         format.json { render :show, status: :ok, location: @vacancy }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -69,7 +69,7 @@ class VacanciesController < ApplicationController
     @vacancy.destroy
 
     respond_to do |format|
-      format.html { redirect_to vacancies_url, notice: "Vacancy was successfully destroyed." }
+      format.html { redirect_to vacancies_url, notice: I18n.t('controller.delete.sucess', type: 'Vaga') }
       format.json { head :no_content }
     end
   end
