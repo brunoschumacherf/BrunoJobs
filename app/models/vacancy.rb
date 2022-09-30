@@ -7,4 +7,11 @@ class Vacancy < ApplicationRecord
             presence: { message: I18n.t('input.required_input', param: 'Rua') }
   validates :requirements, presence: { message: I18n.t('input.required_input', param: 'Requisitos') }
   validates :salary, presence: { message: I18n.t('input.required_input', param: 'Salário') }
+
+  def clone(vacancy)
+    self.location = vacancy.location
+    self.description = vacancy.description
+    self.requirements = vacancy.requirements
+    self.salary = vacancy.salary
+  end
 end

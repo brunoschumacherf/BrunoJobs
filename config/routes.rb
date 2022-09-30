@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
   resources :vacancies
   resources :companies
+  get 'vacancies/:id/clone' => 'vacancies#clone'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

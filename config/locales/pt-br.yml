@@ -1,7 +1,9 @@
 pt-BR:
   datetime:
     distance_in_words:
-        about_x_hours: "algumas horas"
+        less_than_x_minutes: "%{count} minutos"
+        x_minutes: "%{count} minutos"
+        about_x_hours: "%{count} horas"
         x_days:
           one: "1 Dia"
           other: "%{count} Dias"

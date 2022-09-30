@@ -1,6 +1,6 @@
 class VacanciesController < ApplicationController
   skip_before_action :authenticate_company!, only:  %i[ show all ]
-  before_action :set_vacancy, only: %i[ show edit update destroy ]
+  before_action :set_vacancy, only: %i[ show edit update destroy clone ]
 
 
   def all
@@ -17,6 +17,12 @@ class VacanciesController < ApplicationController
   def show
   end
 
+  def clone
+    @new_vacancy = Vacancy.new(available: true)
+    @new_vacancy.clone(@vacancy)
+    @title = @vacancy.title
+    @vacancy = @new_vacancy
+  end
   # GET /vacancies/new
   def new
     @vacancy = Vacancy.new(available: true)

@@ -24,6 +24,12 @@
             <a href='/vacancies/<%= vacancy.id  %>/applicants' class="text-secondary text-decoration-none" aria-label="Left Align">
               <i class="far fa-user"></i>Candidatos
             </a>
+            <a href='/vacancies/<%= vacancy.id  %>/clone' class="text-secondary text-decoration-none" aria-label="Left Align">
+              <i class="far fa-clone"></i>Clonar
+            </a>
+            <a data-method="delete" href='/vacancies/<%= vacancy.id  %>' class="text-secondary text-decoration-none" aria-label="Left Align">
+              <i class="far fa-trash-alt"></i>Apagar
+            </a>
           </td>
         </tr>
       <% end %>
