@@ -12,6 +12,16 @@
 
   <body>
     <%= render "shared/navbar" %>
+    <%if notice.present? && notice.include?('successfully')%>
+    <div class='alert alert-success alert-dismissible fade show'>
+      <b>Sucesso: </b><%=notice%>
+    </div> 
+    <%else if notice.present? %>
+      <div class='alert alert-danger alert-dismissible fade show' role = 'alert'>
+        <b>Erro!</b> <%=notice%>
+      </div> 
+    <%end%>
+    <%end%>
     <%= yield %>
   </body>
 </html>

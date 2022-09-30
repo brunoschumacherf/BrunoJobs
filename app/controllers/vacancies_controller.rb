@@ -35,7 +35,11 @@ class VacanciesController < ApplicationController
   # POST /vacancies or /vacancies.json
   def create
     @vacancy = current_company.vacancies.build(vacancy_params)
-
+    if !current_company.vacancies.where(vacancy_params).first.nil?
+      return respond_to do |format|
+        format.html { redirect_to '/', notice: "Essa vaga já existe" }
+      end
+    end
     respond_to do |format|
       if @vacancy.save
         format.html { redirect_to vacancy_url(@vacancy), notice: "Vacancy was successfully created." }
