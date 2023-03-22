@@ -1,6 +1,6 @@
 class ApplicantsController < ApplicationController
   skip_before_action :authenticate_company!, only: :create
-  before_action :set_applicant, only: %i[ show edit update destroy ]
+  before_action :set_applicant, only: %i[show edit update destroy]
 
   # GET /applicants or /applicants.json
   def index
@@ -12,8 +12,7 @@ class ApplicantsController < ApplicationController
   end
 
   # GET /applicants/1 or /applicants/1.json
-  def show
-  end
+  def show; end
 
   # GET /applicants/new
   def new
@@ -21,8 +20,7 @@ class ApplicantsController < ApplicationController
   end
 
   # GET /applicants/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /applicants or /applicants.json
   def create
@@ -34,7 +32,7 @@ class ApplicantsController < ApplicationController
         format.json { render :show, status: :created, location: @applicant }
       else
         @vacancy = Vacancy.find(@applicant.vacancy_id)
-        format.html { render "vacancies/show", status: :unprocessable_entity }
+        format.html { render 'vacancies/show', status: :unprocessable_entity }
         format.json { render json: @applicant.errors, status: :unprocessable_entity }
       end
     end
@@ -64,13 +62,13 @@ class ApplicantsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_applicant
-      @applicant = Applicant.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_applicant
+    @applicant = Applicant.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def applicant_params
-      params.require(:applicant).permit(:name, :vacancy_id, :curriculum)
-    end
+  # Only allow a list of trusted parameters through.
+  def applicant_params
+    params.require(:applicant).permit(:name, :vacancy_id, :curriculum)
+  end
 end
