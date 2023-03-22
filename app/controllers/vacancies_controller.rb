@@ -2,9 +2,8 @@ class VacanciesController < ApplicationController
   skip_before_action :authenticate_company!, only:  %i[ show all ]
   before_action :set_vacancy, only: %i[ show edit update destroy clone ]
 
-
   def all
-    @vacancies =  Vacancy.where(available: true).order(created_at: :desc).page(params[:page]).per(10)
+    @vacancies = Vacancy.where(available: true).order(created_at: :desc).page(params[:page]).per(10)
   end
   # GET /vacancies or /vacancies.json
   def index
@@ -14,8 +13,7 @@ class VacanciesController < ApplicationController
   end
 
   # GET /vacancies/1 or /vacancies/1.json
-  def show
-  end
+  def show; end
 
   def clone
     @new_vacancy = Vacancy.new(available: true)
@@ -23,14 +21,14 @@ class VacanciesController < ApplicationController
     @title = @vacancy.title
     @vacancy = @new_vacancy
   end
+
   # GET /vacancies/new
   def new
     @vacancy = Vacancy.new(available: true)
   end
 
   # GET /vacancies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /vacancies or /vacancies.json
   def create
@@ -75,13 +73,13 @@ class VacanciesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vacancy
-      @vacancy = Vacancy.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vacancy
+    @vacancy = Vacancy.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def vacancy_params
-      params.require(:vacancy).permit(:title, :location, :description, :requirements, :salary, :available, :company_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def vacancy_params
+    params.require(:vacancy).permit(:title, :location, :description, :requirements, :salary, :available, :company_id)
+  end
 end
