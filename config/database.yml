@@ -11,7 +11,12 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  uri: <%= ENV['DATABASE_URL'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
