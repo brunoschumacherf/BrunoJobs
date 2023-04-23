@@ -5,6 +5,9 @@
       <% @vacancies.each do |vacancy| %>
         <%= render partial: 'vacancy_card', locals: { vacancy: vacancy } %>
       <% end %>
+      <% if @vacancies.empty? %>
+        <div class="text-center">Nenhuma vaga encontrada</div>
+      <% end %>
     </div>
   </div>
 
