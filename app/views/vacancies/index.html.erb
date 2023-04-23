@@ -33,6 +33,11 @@
           </td>
         </tr>
       <% end %>
+      <% if @vacancies.empty? %>
+        <tr>
+          <td colspan="4" class="text-center">Nenhum anúncio encontrado</td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
   <div class="d-flex">
