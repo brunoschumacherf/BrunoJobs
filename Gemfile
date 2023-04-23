@@ -10,6 +10,7 @@ gem 'rails', '~> 6.1.6'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :production do
@@ -66,3 +67,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem "image_processing", ">= 1.2" 
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "net-smtp", "~> 0.3.3", :require => false
+
+gem "net-imap", "~> 0.3.4", :require => false
+
+gem "net-pop", "~> 0.1.2", :require => false
