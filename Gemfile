@@ -8,15 +8,15 @@ gem 'devise'
 gem 'rails', '~> 6.1.6'
 # Use sqlite3 as the database for Active Record
 
-group :development, :test do
-  gem 'sqlite3'
-  gem 'dotenv-rails'
-end
+# group :development, :test do
+#   gem 'sqlite3'
+#   gem 'dotenv-rails'
+# end
 
-group :production do
-  gem 'pg'
-end
-
+# group :production do
+#   gem 'pg'
+# end
+gem  'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
