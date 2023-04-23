@@ -22,6 +22,8 @@ test:
 
 production:
   <<: *default
-  url: 'postgres://bruno_jobs_user:hKP6cTvjBVsOE10CI2xta1rixxb3maK1@dpg-ch22bq5269v61fbdnleg-a/bruno_jobs'
-
-  
+  host: 'dpg-ch22bq5269v61fbdnleg-a.oregon-postgres.render.com'
+  database: 'bruno_jobs'
+  username: 'bruno_jobs_user'
+  password: 'hKP6cTvjBVsOE10CI2xta1rixxb3maK1'
+  port: 5432
