@@ -2,6 +2,10 @@
 
 BrunoJobs é um projeto de plataforma online para postagem e busca de vagas de emprego, que permite às empresas e aos candidatos interagirem diretamente. Este projeto foi desenvolvido para oferecer uma solução simples e eficaz para o processo de busca de empregos.
 
+
+
+[Link Deploy](https://bruno-jobs.onrender.com/)
+pode haver demorar pra carregar devido ao render
 ## Funcionalidades
 BrunoJobs possui uma série de funcionalidades, incluindo:
 
@@ -42,7 +46,7 @@ RAILS_MASTER_KEY=
 
 Rodar servidor
 ```bash
-  rails
+  rails s
 ```
 
 ```bash
